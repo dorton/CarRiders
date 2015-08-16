@@ -43,3 +43,17 @@ group :development, :test do
   gem 'spring'
 end
 
+
+gem 'devise'
+gem 'active_model_serializers'
+gem 'grape'
+gem 'grape-active_model_serializers'
+gem 'grape-swagger-rails'
+gem 'rack-cors', require: 'rack/cors'
+group :development do
+  gem 'better_errors'
+  gem 'meta_request'
+  gem 'quiet_assets'
+  gem 'factory_girl_rails'
+  gem 'faker'
+end
