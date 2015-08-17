@@ -1,0 +1,5 @@
+class AddsStudentsToParents < ActiveRecord::Migration
+  def change
+    add_column :parents, :student_id, :integer
+  end
+end

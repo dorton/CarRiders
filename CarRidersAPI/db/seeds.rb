@@ -32,11 +32,23 @@ end
 
 def create_student(parent:, teacher:)
   student = Student.new
-  student.name = Faker::Name.name
+  student.first_name = Faker::Name.first_name
+  student.last_name = Faker::Name.last_name
+  student.pic = Faker::Avatar.image
   student.teacher = teacher
   student.parent = parent
   student.save!
+  student
 end
+
+def create_pickup(student:, parent:)
+  pickup = Pickup.new
+  pickup.current_pickup = [true, false].sample
+  pickup.student = student
+  pickup.parent = parent
+  pickup.save!
+end
+
 
 10.times do
   create_teacher
@@ -45,8 +57,15 @@ end
 50.times do
 
   p = create_parent
-  [1, 2, 5].sample.times do
+  [1, 2, 3, 4].sample.times do
     t = Teacher.all.sample
     create_student(parent: p, teacher: t)
   end
+
+end
+
+100.times do
+  s = Student.all.sample
+  p = s.parent
+  create_pickup(student: s, parent: p)
 end

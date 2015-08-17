@@ -6,6 +6,7 @@ module API
       mount API::V1::Students
       mount API::V1::Parents
       mount API::V1::Teachers
+      mount API::V1::Pickups
 
 
       add_swagger_documentation(

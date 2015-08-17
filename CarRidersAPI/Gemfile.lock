@@ -223,7 +223,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  active_model_serializers
   better_errors
   byebug
   coffee-rails (~> 4.1.0)
