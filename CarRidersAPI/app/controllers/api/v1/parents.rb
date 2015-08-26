@@ -16,6 +16,18 @@ module API
         get ":id", root: "parent" do
           Parent.where(id: permitted_params[:id]).first!
         end
+
+        desc "Create a Parent"
+      post do
+
+        Parent.create!({
+          name: params[:parent][:name],
+          email: params[:parent][:email],
+          phone: params[:parent][:phone],
+
+        })
+      end
+
       end
     end
   end

@@ -1,0 +1,22 @@
+
+<md-content class="md-padding">
+
+<h2 class="md-display-2">Parents</h2>
+<div class="display-content">
+  <md-content class="md-padding cards">
+    {{#each model as |parent|}}
+    <md-card class="card">
+        <md-card-content>
+          <h1 class="md-display-1">{{parent.name}}</h1>
+        </md-card-content>
+      </md-card>
+
+    {{else}}
+      <h2 class="md-display-2">No Parents(yet)</h2>
+    {{/each}}
+  </md-content>
+</div>
+
+{{outlet}}
+
+</md-content>

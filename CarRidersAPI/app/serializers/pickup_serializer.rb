@@ -1,17 +1,14 @@
 class PickupSerializer < ActiveModel::Serializer
-  attributes :current_pickup, :time_submitted, :student_name, :grade, :teacher, :parent_name, :pic
+  attributes :id, :current_pickup, :time_submitted, :student_name, :grade, :teacher, :pic, :parent_name, :updated_at
+
 
 
   def student_name
-    "#{object.student.first_name} #{object.student.last_name}"
+    object.student.full_name
   end
 
   def time_submitted
     object.created_at.strftime('%b %e, %l:%M %p')
-  end
-
-  def parent_name
-    object.student.parent.name
   end
 
   def grade
@@ -24,6 +21,10 @@ class PickupSerializer < ActiveModel::Serializer
 
   def pic
     object.student.pic
+  end
+
+  def parent_name
+    object.parent.name
   end
 
 end

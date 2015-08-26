@@ -22,32 +22,28 @@ def create_parent
   parent.name = Faker::Name.name
   parent.phone = Faker::PhoneNumber.cell_phone
   parent.email = Faker::Internet.email
-  parent.address = Faker::Address.street_address
-  parent.zip = Faker::Address.zip
-  parent.state = Faker::Address.state
-  parent.city = Faker::Address.city
   parent.save!
   parent
 end
 
-def create_student(parent:, teacher:)
+def create_student(teacher)
   student = Student.new
   student.first_name = Faker::Name.first_name
   student.last_name = Faker::Name.last_name
   student.pic = Faker::Avatar.image
   student.teacher = teacher
-  student.parent = parent
   student.save!
   student
 end
 
-def create_pickup(student:, parent:)
-  pickup = Pickup.new
-  pickup.current_pickup = [true, false].sample
-  pickup.student = student
-  pickup.parent = parent
-  pickup.save!
-end
+# def create_pickup(student:, parent:)
+#   pickup = Pickup.new
+#   pickup.current_pickup = [true, false].sample
+#   pickup.student = student
+#   pickup.parent = parent
+#   pickup.save!
+#   pickup
+# end
 
 
 10.times do
@@ -55,17 +51,18 @@ end
 end
 
 50.times do
-
-  p = create_parent
+  dad  = create_parent
+  mom  = create_parent
   [1, 2, 3, 4].sample.times do
-    t = Teacher.all.sample
-    create_student(parent: p, teacher: t)
+    little_bobby = create_student(Teacher.all.sample)
+    little_bobby.parents << dad
+    little_bobby.parents << mom
   end
 
 end
 
-100.times do
-  s = Student.all.sample
-  p = s.parent
-  create_pickup(student: s, parent: p)
-end
+# 100.times do
+#   s = Student.all.sample
+#   p = s.parent
+#   create_pickup(student: s, parent: p)
+# end

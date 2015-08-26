@@ -1,0 +1,27 @@
+
+<md-content class="md-padding">
+
+<h2 class="md-display-2">Pickups</h2>
+<div class="display-content">
+  <md-content class="md-padding cards">
+    {{#each model as |pickup|}}
+{{#md-button}}
+    <md-card class="card">
+        <md-card-content class="center">
+          <h1 class="md-subhead">{{pickup.student_name}}</h1>
+          <img src="{{pickup.pic}}" height="75" width="75"/>
+        </md-card-content>
+      </md-card>
+{{/md-button}}
+    {{else}}
+      <h2 class="md-display-2"><img src="http://i.giphy.com/6HOkD1pSCne4E.gif" /></h2>
+    {{/each}}
+  </md-content>
+</div>
+
+{{outlet}}
+
+</md-content>
+
+
+{{outlet}}

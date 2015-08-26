@@ -1,4 +1,5 @@
 class Parent < ActiveRecord::Base
-  has_many :students
-  has_many :parents
+  has_many :pickups
+  has_many :students, :through => :pickups
+
 end

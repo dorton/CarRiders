@@ -1,0 +1,20 @@
+@import "ember-material-design";
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  flex-shrink: 1;
+}
+
+.card {
+/*   height: 200px;
+ */  width: 200px;
+}
+
+.menu_color {
+  background-color: #39474e;
+}
+
+.center {
+
+}

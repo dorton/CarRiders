@@ -1,3 +1,19 @@
-<h2 id="title">Welcome to Ember.js</h2>
+{{#md-toolbar}}
+     <div class="md-toolbar-tools menu_color">
+       {{#md-button class="md-icon-button"}}
+         {{#link-to 'index'}}{{md-icon md-svg-icon="/images/icons.svg"}}{{/link-to}}
+       {{/md-button}}
+         <h2>
+             <span>{{#link-to 'index'}}CarRiders{{/link-to}}</span>
+         </h2>
+         <span flex></span>
+       <!-- {{#md-button class="md-icon-button"}}
+         {{md-icon md-svg-icon="images/icons/favorite.svg"}}
+       {{/md-button}}
+       {{#md-button class="md-icon-button"}}
+         {{md-icon md-svg-icon="images/icons/more_vert.svg"}}
+       {{/md-button}} -->
+     </div>
+ {{/md-toolbar}}
 
 {{outlet}}

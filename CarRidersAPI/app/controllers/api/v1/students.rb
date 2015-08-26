@@ -16,6 +16,17 @@ module API
         get ":id", root: "student" do
           Student.where(id: permitted_params[:id]).first!
         end
+
+        desc "Create a Student"
+      post do
+
+        Student.create!({
+          first_name: params[:student][:first_name],
+          last_name: params[:student][:last_name],
+          pic: params[:student][:pic],
+        })
+      end
+
       end
     end
   end
