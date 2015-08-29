@@ -1,0 +1,40 @@
+<div class="container">
+  <div id="login" class="signin-card">
+    <div class="logo-image">
+    <img src="images/icons.svg" alt="Logo" title="Logo" width="138">
+    </div>
+    <h1 class="display1">CarRiders</h1>
+    <p class="subhead"></p>
+
+    <form action="" method="" class="" role="form">
+
+      {{#md-input-container value=user.email}}
+          <label>Name</label>
+          {{md-input type="name"}}
+      {{/md-input-container}}
+
+      {{#md-input-container value=user.email}}
+          <label>Email</label>
+          {{md-input type="email"}}
+      {{/md-input-container}}
+
+      {{#md-input-container value=user.password}}
+          <label>Password</label>
+          {{md-input type="password"}}
+      {{/md-input-container}}
+
+      {{#md-input-container value=user.password}}
+          <label>Confirm Password</label>
+          {{md-input type="password"}}
+      {{/md-input-container}}
+
+
+      {{#md-button class="md-raised"}}Sign Up{{/md-button}}
+
+
+    </form>
+
+  </div>
+</div>
+
+{{outlet}}

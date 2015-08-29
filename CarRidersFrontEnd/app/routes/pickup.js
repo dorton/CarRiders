@@ -10,4 +10,14 @@ export default Ember.Route.extend({
     });
 },
 
+
+        actions: {
+          reset: function(pickup){
+            let route = this;
+            pickup.set('current_pickup', false);
+            pickup.save().then(function(){
+              route.refresh();
+            })
+          }
+        }
 });

@@ -8,6 +8,7 @@ var Router = Ember.Router.extend({
 Router.map(function() {
   this.route('parent');
   this.route('pickup');
+  this.route('signup');
 });
 
 export default Router;

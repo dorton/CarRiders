@@ -1,18 +1,21 @@
 
 <md-content class="md-padding">
 
-<h2 class="md-display-2">Parents</h2>
+  <h2 class="md-display-2">Please Select Children You Are Picking Up</h2>
 <div class="display-content">
   <md-content class="md-padding cards">
-    {{#each model as |parent|}}
+    {{#each model as |pickup|}}
+{{#md-button action="reset" param=pickup}}
     <md-card class="card">
-        <md-card-content>
-          <h1 class="md-display-1">{{parent.name}}</h1>
+        <md-card-content class="center">
+          <h1 class="md-subhead">{{pickup.student_name}}</h1>
+          <img src="{{pickup.pic}}" height="75" width="75"/>
+          <h1 class="md-body-2">{{pickup.teacher}} - {{pickup.grade}}</h1>
         </md-card-content>
       </md-card>
-
+{{/md-button}}
     {{else}}
-      <h2 class="md-display-2">No Parents(yet)</h2>
+      <h2 class="md-display-2"><img src="http://i.giphy.com/6HOkD1pSCne4E.gif" /></h2>
     {{/each}}
   </md-content>
 </div>
@@ -20,3 +23,6 @@
 {{outlet}}
 
 </md-content>
+
+
+{{outlet}}

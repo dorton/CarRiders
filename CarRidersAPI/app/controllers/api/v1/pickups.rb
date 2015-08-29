@@ -35,6 +35,17 @@ module API
           })
         end
 
+        desc "Update a current_pickup status"
+        # params do
+        #   requires :id, type: String
+        #   requires :current_pickup, type:Boolean
+        # end
+        put ':id' do
+          Pickup.find(params[:id]).update({
+          current_pickup:params[:pickup][:current_pickup]
+          })
+        end
+
       end
     end
   end
